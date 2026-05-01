@@ -96,10 +96,6 @@ nav ul li a:hover {
     margin-bottom: 15px;
 }
 
-.blue-text {
-    color: #0056b3;
-}
-
 .hero p {
     font-size: 18px;
     color: #666;
@@ -158,8 +154,6 @@ nav ul li a:hover {
 }
 
 #prices .card {
-    width: 338px;
-    height: 211px;
     background: white;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
@@ -170,22 +164,22 @@ nav ul li a:hover {
     font-weight: bold;
     text-align: center;
     padding: 20px;
-    line-height: 1.3;
+    min-height: 200px;
     transition: 0.3s;
 }
 
-/* --- 5. СЕКЦІЯ НАШІ РОБОТИ (Великі картки в стовпчик) --- */
+/* --- 5. СЕКЦІЯ НАШІ РОБОТИ --- */
 #works {
     background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("work.png");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    padding: 80px 20px;
+    padding: 60px 20px;
 }
 
 #works .cards {
     display: grid;
-    grid-template-columns: 1fr; /* Тільки один стовпчик */
+    grid-template-columns: 1fr;
     gap: 50px;
     max-width: 900px;
     margin: 0 auto;
@@ -193,15 +187,10 @@ nav ul li a:hover {
 
 #works .card {
     width: 100%;
-    max-width: 850px;
     height: 480px;
     position: relative;
     overflow: hidden;
     border-radius: 20px;
-    padding: 0 !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
@@ -214,10 +203,8 @@ nav ul li a:hover {
 
 .card-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     background: rgba(0, 0, 0, 0.4);
     display: flex;
     align-items: center;
@@ -226,123 +213,35 @@ nav ul li a:hover {
     transition: 0.3s;
 }
 
-#works .card-overlay span {
-    font-size: 32px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
 .card:hover img { transform: scale(1.1); }
-.card:hover .card-overlay { background: rgba(0, 0, 0, 0.2); }
 
-/* --- 6. КОНТАКТИ --- */
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 450px;
-    margin: auto;
-}
-
-input, textarea {
-    padding: 14px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-}
-
-#form button {
-    padding: 15px;
-    background: #2f6fed;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-/* --- 7. АДАПТИВНІСТЬ --- */
-@media (max-width: 768px) {
-    .nav-container { flex-direction: column; gap: 15px; }
-    
-    .hero {
-        padding: 120px 20px 80px 20px;
-        text-align: center;
-        background-position: 80% center;
-        height: auto;
-    }
-
-    .hero .container { padding-left: 0; margin: 0 auto; text-align: center; }
-    .hero h1 { font-size: 30px !important; }
-    .buttons { flex-direction: column; align-items: center; margin-top: 40px; }
-    .buttons button { width: 100%; max-width: 300px; }
-
-    #prices .cards, #works .cards { grid-template-columns: 1fr !important; }
-    #prices .card { width: 100%; max-width: 338px; height: auto; min-height: 150px; }
-    #works .card { height: 300px; }
-}
-/* Робимо так, щоб синій текст не мав підкреслення, якщо це посилання */
-a.blue-text {
-    text-decoration: none;
-    font-weight: bold; /* Можна додати жирності, щоб виглядало солідніше */
-}
-
-/* Ефект при наведенні (опціонально) */
-a.blue-text:hover {
-    text-decoration: underline; /* Підкреслення з'явиться тільки коли наводите мишкою */
-    opacity: 0.8; /* Трохи змінить яскравість */
-}
-/* Це правило каже: будь-який елемент з цим класом (навіть посилання) має бути синім */
-.blue-text {
-    color: #007bff !important; /* !important гарантує, що синій колір переможе стандартний чорний або фіолетовий */
-    text-decoration: none;      /* Прибирає нижнє підкреслення */
-}
-
-/* Щоб колір не змінювався навіть після того, як користувач вже клікав на номер */
-.blue-text:visited {
-    color: #007bff !important;
-}
-/* Налаштування відступів для всіх основних блоків */
-#works, .about, #contact {
-    padding-top: 40px;    /* Відступ всередині секції зверху */
-    padding-bottom: 40px; /* Відступ всередині секції знизу */
-    margin-top: 0;        /* Прибираємо зовнішні відступи, якщо вони були */
-    margin-bottom: 0;     /* Прибираємо зовнішні відступи, якщо вони були */
-}
-
-/* Якщо між секціями все одно велика дірка, перевір заголовки */
-#works h2, .about h2, #contact h2 {
-    margin-top: 0;        /* Заголовок не повинен штовхати секцію вгору */
-    margin-bottom: 20px;  /* Відступ від заголовка до контенту (карток чи тексту) */
-}
+/* --- 6. ОБ'ЄДНАНА СЕКЦІЯ (ПРО НАС + КОНТАКТИ) --- */
 .combined-section {
-    /* Вкажіть шлях до вашого фото */
-    background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('ваше-фото.jpg');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
+                      url('fon3sec.png');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Фото залишається на місці при скролі */
-    padding: 60px 0;
+    background-attachment: fixed;
+    padding: 80px 0;
     text-align: center;
+    border-top: 1px solid #eee;
 }
 
 .about-content, .contact-content {
-    max-width: 800px;
+    max-width: 850px;
     margin: 0 auto;
+    line-height: 1.6;
 }
 
-/* Відступи між текстом про нас і контактами */
 .section-divider {
     border: 0;
     height: 1px;
-    background: rgba(0, 123, 255, 0.2); /* Дуже ніжна синя лінія */
-    margin: 40px auto;
-    width: 50%;
+    background: linear-gradient(to right, transparent, rgba(0, 123, 255, 0.3), transparent);
+    margin: 50px auto;
+    width: 60%;
 }
 
-/* Налаштування посилань з іконками */
+/* Контакти та Форма */
 .contact-links {
     display: flex;
     justify-content: center;
@@ -356,7 +255,6 @@ a.blue-text:hover {
     align-items: center;
     gap: 8px;
     text-decoration: none;
-    font-weight: bold;
 }
 
 .blue-icon {
@@ -364,77 +262,72 @@ a.blue-text:hover {
     height: 20px;
 }
 
-/* Стилі форми, щоб вона була компактною поверх фону */
+.blue-text {
+    color: #007bff !important;
+    text-decoration: none !important;
+    font-weight: bold;
+}
+
+.blue-text:visited { color: #007bff !important; }
+
 #form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    max-width: 500px;
-    margin: 0 auto;
+    gap: 12px;
+    max-width: 450px;
+    margin: auto;
 }
 
-#form input, #form textarea {
-    padding: 12px;
+input, textarea {
+    padding: 14px;
+    border-radius: 8px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.9); /* Напівпрозорі поля */
-}
-/* 🔥 ОБ'ЄДНАНА СЕКЦІЯ (ПРО НАС + КОНТАКТИ) */
-.combined-section {
-    /* 1. Додаємо твоє фото fon3sec.png */
-    /* 2. Накладаємо білий напівпрозорий градієнт (0.85), щоб текст було легко читати */
-    background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
-                      url('fon3sec.png'); 
-    
-    background-size: cover;        /* Фото розтягується на всю ширину та висоту секції */
-    background-position: center;   /* Центруємо зображення */
-    background-attachment: fixed;  /* Ефект паралаксу: фон стоїть, а контент рухається */
-    padding: 80px 0;               /* Збільшені відступи для солідності */
-    text-align: center;
-    border-top: 1px solid #eee;    /* Тонка лінія зверху для відділення від попередньої секції */
+    background: rgba(255, 255, 255, 0.9);
 }
 
-/* Стилізація текстових блоків всередині */
-.about-content, .contact-content {
-    max-width: 850px;
-    margin: 0 auto;
-    line-height: 1.6;              /* Робимо текст більш читабельним */
+#form button {
+    padding: 15px;
+    background: #2f6fed;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-/* Відступ між описом та контактами */
-.section-divider {
-    border: 0;
-    height: 1px;
-    background: linear-gradient(to right, transparent, rgba(0, 123, 255, 0.3), transparent);
-    margin: 50px auto;
-    width: 60%;
-}
-/* Налаштування для мобільних пристроїв (ширина екрана до 768px) */
+/* --- 7. АДАПТИВНІСТЬ (MOBILE) --- */
 @media screen and (max-width: 768px) {
-    .combined-section {
-        /* Зміщуємо фон: 20% по горизонталі (лівіше), щоб монітор пішов вправо за межі екрана */
-        background-position: 20% center; 
-        
-        /* Вимикаємо fixed на телефонах, бо він часто глючить на мобільних браузерах */
-        background-attachment: scroll; 
-        
-        /* Робимо білий фон трохи щільнішим (0.9 замість 0.85), щоб текст краще читався */
-        background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
-                          url('fon3sec.png');
-        
-        padding: 40px 15px; /* Менші відступи зверху/знизу, щоб не було занадто довго гортати */
+    .nav-container { flex-direction: column; gap: 15px; }
+    
+    .hero {
+        padding: 120px 20px 80px 20px;
+        text-align: center;
+        background-position: 25% center; /* Монітор ховається вправо */
+        height: auto;
     }
 
-    .about-content h2, .contact-content h2 {
-        font-size: 1.5rem; /* Трохи зменшуємо заголовки, щоб не займали весь екран */
+    .hero .container { padding-left: 0; margin: 0 auto; text-align: center; }
+    .hero h1 { font-size: 30px !important; }
+    .buttons { flex-direction: column; align-items: center; }
+    .buttons button { width: 100%; max-width: 300px; }
+
+    #prices .cards, #works .cards { grid-template-columns: 1fr !important; }
+    #works .card { height: 300px; }
+
+    /* Адаптація об'єднаної секції */
+    .combined-section {
+        background-position: 20% center !important; /* Монітор ховається вправо */
+        background-attachment: scroll !important;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), 
+                          url('fon3sec.png') !important;
+        padding: 40px 15px !important;
     }
 
     .contact-links {
-        flex-direction: column; /* На дуже вузьких екранах ставимо телефон і ватсап один під одного */
-        gap: 10px;
+        flex-direction: column;
+        gap: 12px;
     }
 
-    .divider {
-        display: none; /* Прибираємо вертикальну риску, бо вона не потрібна в стовпчику */
-    }
+    .divider { display: none; }
 }
