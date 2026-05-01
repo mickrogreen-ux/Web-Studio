@@ -409,3 +409,32 @@ a.blue-text:hover {
     margin: 50px auto;
     width: 60%;
 }
+/* Налаштування для мобільних пристроїв (ширина екрана до 768px) */
+@media screen and (max-width: 768px) {
+    .combined-section {
+        /* Зміщуємо фон: 20% по горизонталі (лівіше), щоб монітор пішов вправо за межі екрана */
+        background-position: 20% center; 
+        
+        /* Вимикаємо fixed на телефонах, бо він часто глючить на мобільних браузерах */
+        background-attachment: scroll; 
+        
+        /* Робимо білий фон трохи щільнішим (0.9 замість 0.85), щоб текст краще читався */
+        background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+                          url('fon3sec.png');
+        
+        padding: 40px 15px; /* Менші відступи зверху/знизу, щоб не було занадто довго гортати */
+    }
+
+    .about-content h2, .contact-content h2 {
+        font-size: 1.5rem; /* Трохи зменшуємо заголовки, щоб не займали весь екран */
+    }
+
+    .contact-links {
+        flex-direction: column; /* На дуже вузьких екранах ставимо телефон і ватсап один під одного */
+        gap: 10px;
+    }
+
+    .divider {
+        display: none; /* Прибираємо вертикальну риску, бо вона не потрібна в стовпчику */
+    }
+}
