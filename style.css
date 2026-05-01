@@ -355,3 +355,31 @@ input, textarea {
     text-align: center;
     width: 100%;
 }
+/* Встановлюємо початковий стан для оверлею (темний фон) */
+#works .card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Темна "плівка" за замовчуванням */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease; /* Плавність зміни */
+    opacity: 1; /* Оверлей видимий відразу */
+}
+
+/* Ефект при наведенні на картку */
+#works .card:hover .card-overlay {
+    background: rgba(0, 0, 0, 0.1); /* Стає світлішим при наведенні */
+}
+
+/* Додатково: легке збільшення картинки для крутого вигляду */
+#works .card img {
+    transition: transform 0.5s ease;
+}
+
+#works .card:hover img {
+    transform: scale(1.05); /* Картинка ніби наближається */
+}
