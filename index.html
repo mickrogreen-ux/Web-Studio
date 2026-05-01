@@ -15,8 +15,7 @@
         
         <nav>
             <ul>
-                <li><a href="#" onclick="scrollToTop()">Головна</a></li>
-                <li><a href="#about" onclick="event.preventDefault(); document.querySelector('.about').scrollIntoView({behavior: 'smooth'})">Про нас</a></li>
+                <li><a href="#about" onclick="event.preventDefault(); document.getElementById('about').scrollIntoView({behavior: 'smooth'})">Про нас</a></li>
                 <li><a href="#works" onclick="event.preventDefault(); document.getElementById('works').scrollIntoView({behavior: 'smooth'})">Портфоліо</a></li>
                 <li><a href="#contact" onclick="event.preventDefault(); document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Контакти</a></li>
             </ul>
@@ -29,10 +28,10 @@
        <h1>Створюємо <span class="blue-text">сучасні сайти</span> для вашого бізнесу</h1>
         <p>Розробка односторінкових та багатосторінкових сайтів, веб-дизайн та створення унікальних рішень для вашого успіху в інтернеті.</p>
 
-        <div class="buttons">
-            <button onclick="scrollToContact()">Замовити сайт</button>
-            <button onclick="scrollToWorks()" class="secondary">Дивитися роботи</button>
-        </div>
+       <div class="buttons">
+    <button onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Замовити сайт</button>
+    <button onclick="document.getElementById('works').scrollIntoView({behavior: 'smooth'})" class="secondary">Дивитися роботи</button>
+</div>
     </div>
 </header>
 <!-- 🔥 ВАРТІСТЬ -->
@@ -83,7 +82,7 @@
 </section>
 
 <!-- 🔥 ОБ'ЄДНАНА СЕКЦІЯ (ПРО НАС + КОНТАКТИ) -->
-<section class="combined-section">
+<section class="combined-section" id="about"></section>
     <div class="container">
         
         <!-- Блок ПРО НАС -->
