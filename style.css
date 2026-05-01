@@ -1,0 +1,411 @@
+/* --- 1. ЗАГАЛЬНІ СТИЛІ --- */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f5f7fa;
+    color: #222;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+/* --- 2. НАВІГАЦІЯ --- */
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    color: #222;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+.logo span {
+    color: #2f6fed;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #222;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #2f6fed;
+}
+
+/* --- 3. HERO СЕКЦІЯ (Головна) --- */
+.hero {
+    height: 750px;
+    background: url("background2.png") center/cover no-repeat;
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start;
+    padding-top: 80px; 
+}
+
+.hero .container {
+    max-width: 800px;
+    margin-left: 0; 
+    padding-left: 80px;
+    text-align: left;
+}
+
+.hero h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: #333;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.blue-text {
+    color: #0056b3;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #666;
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+.buttons {
+    margin-top: 60px;
+    display: flex;
+    gap: 20px;
+}
+
+.buttons button {
+    padding: 16px 32px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    transition: 0.3s;
+}
+
+.buttons button:first-child {
+    background: #2f6fed;
+    color: white;
+}
+
+.buttons .secondary {
+    background: white; 
+    border: 2px solid #2f6fed;
+    color: #2f6fed;
+}
+
+.buttons button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+/* --- 4. СЕКЦІЯ ЦІН --- */
+#prices {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('background.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    padding: 100px 20px;
+}
+
+#prices .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+#prices .card {
+    width: 338px;
+    height: 211px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    line-height: 1.3;
+    transition: 0.3s;
+}
+
+/* --- 5. СЕКЦІЯ НАШІ РОБОТИ (Великі картки в стовпчик) --- */
+#works {
+    background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url("work.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 80px 20px;
+}
+
+#works .cards {
+    display: grid;
+    grid-template-columns: 1fr; /* Тільки один стовпчик */
+    gap: 50px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+#works .card {
+    width: 100%;
+    max-width: 850px;
+    height: 480px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: 0.3s;
+}
+
+#works .card-overlay span {
+    font-size: 32px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.card:hover img { transform: scale(1.1); }
+.card:hover .card-overlay { background: rgba(0, 0, 0, 0.2); }
+
+/* --- 6. КОНТАКТИ --- */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 450px;
+    margin: auto;
+}
+
+input, textarea {
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+#form button {
+    padding: 15px;
+    background: #2f6fed;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* --- 7. АДАПТИВНІСТЬ --- */
+@media (max-width: 768px) {
+    .nav-container { flex-direction: column; gap: 15px; }
+    
+    .hero {
+        padding: 120px 20px 80px 20px;
+        text-align: center;
+        background-position: 80% center;
+        height: auto;
+    }
+
+    .hero .container { padding-left: 0; margin: 0 auto; text-align: center; }
+    .hero h1 { font-size: 30px !important; }
+    .buttons { flex-direction: column; align-items: center; margin-top: 40px; }
+    .buttons button { width: 100%; max-width: 300px; }
+
+    #prices .cards, #works .cards { grid-template-columns: 1fr !important; }
+    #prices .card { width: 100%; max-width: 338px; height: auto; min-height: 150px; }
+    #works .card { height: 300px; }
+}
+/* Робимо так, щоб синій текст не мав підкреслення, якщо це посилання */
+a.blue-text {
+    text-decoration: none;
+    font-weight: bold; /* Можна додати жирності, щоб виглядало солідніше */
+}
+
+/* Ефект при наведенні (опціонально) */
+a.blue-text:hover {
+    text-decoration: underline; /* Підкреслення з'явиться тільки коли наводите мишкою */
+    opacity: 0.8; /* Трохи змінить яскравість */
+}
+/* Це правило каже: будь-який елемент з цим класом (навіть посилання) має бути синім */
+.blue-text {
+    color: #007bff !important; /* !important гарантує, що синій колір переможе стандартний чорний або фіолетовий */
+    text-decoration: none;      /* Прибирає нижнє підкреслення */
+}
+
+/* Щоб колір не змінювався навіть після того, як користувач вже клікав на номер */
+.blue-text:visited {
+    color: #007bff !important;
+}
+/* Налаштування відступів для всіх основних блоків */
+#works, .about, #contact {
+    padding-top: 40px;    /* Відступ всередині секції зверху */
+    padding-bottom: 40px; /* Відступ всередині секції знизу */
+    margin-top: 0;        /* Прибираємо зовнішні відступи, якщо вони були */
+    margin-bottom: 0;     /* Прибираємо зовнішні відступи, якщо вони були */
+}
+
+/* Якщо між секціями все одно велика дірка, перевір заголовки */
+#works h2, .about h2, #contact h2 {
+    margin-top: 0;        /* Заголовок не повинен штовхати секцію вгору */
+    margin-bottom: 20px;  /* Відступ від заголовка до контенту (карток чи тексту) */
+}
+.combined-section {
+    /* Вкажіть шлях до вашого фото */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('ваше-фото.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Фото залишається на місці при скролі */
+    padding: 60px 0;
+    text-align: center;
+}
+
+.about-content, .contact-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Відступи між текстом про нас і контактами */
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: rgba(0, 123, 255, 0.2); /* Дуже ніжна синя лінія */
+    margin: 40px auto;
+    width: 50%;
+}
+
+/* Налаштування посилань з іконками */
+.contact-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.link-with-icon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.blue-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Стилі форми, щоб вона була компактною поверх фону */
+#form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#form input, #form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.9); /* Напівпрозорі поля */
+}
+/* 🔥 ОБ'ЄДНАНА СЕКЦІЯ (ПРО НАС + КОНТАКТИ) */
+.combined-section {
+    /* 1. Додаємо твоє фото fon3sec.png */
+    /* 2. Накладаємо білий напівпрозорий градієнт (0.85), щоб текст було легко читати */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), 
+                      url('fon3sec.png'); 
+    
+    background-size: cover;        /* Фото розтягується на всю ширину та висоту секції */
+    background-position: center;   /* Центруємо зображення */
+    background-attachment: fixed;  /* Ефект паралаксу: фон стоїть, а контент рухається */
+    padding: 80px 0;               /* Збільшені відступи для солідності */
+    text-align: center;
+    border-top: 1px solid #eee;    /* Тонка лінія зверху для відділення від попередньої секції */
+}
+
+/* Стилізація текстових блоків всередині */
+.about-content, .contact-content {
+    max-width: 850px;
+    margin: 0 auto;
+    line-height: 1.6;              /* Робимо текст більш читабельним */
+}
+
+/* Відступ між описом та контактами */
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(0, 123, 255, 0.3), transparent);
+    margin: 50px auto;
+    width: 60%;
+}

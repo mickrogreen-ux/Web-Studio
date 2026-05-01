@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Studio ArtemSof</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 🔥 HEADER -->
+<header class="navbar">
+    <div class="nav-container">
+        <div class="logo">Web Studio<span> ArtemSof</span></div>
+        
+        <nav>
+            <ul>
+                <li><a href="#" onclick="scrollToTop()">Головна</a></li>
+                <li><a href="#about" onclick="event.preventDefault(); document.querySelector('.about').scrollIntoView({behavior: 'smooth'})">Про нас</a></li>
+                <li><a href="#works" onclick="event.preventDefault(); document.getElementById('works').scrollIntoView({behavior: 'smooth'})">Портфоліо</a></li>
+                <li><a href="#contact" onclick="event.preventDefault(); document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Контакти</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<header class="hero">
+    <div class="container">
+       <h1>Створюємо <span class="blue-text">сучасні сайти</span> для вашого бізнесу</h1>
+        <p>Розробка односторінкових та багатосторінкових сайтів, веб-дизайн та створення унікальних рішень для вашого успіху в інтернеті.</p>
+
+        <div class="buttons">
+            <button onclick="scrollToContact()">Замовити сайт</button>
+            <button onclick="scrollToWorks()" class="secondary">Дивитися роботи</button>
+        </div>
+    </div>
+</header>
+<!-- 🔥 ВАРТІСТЬ -->
+<section class="prices" id="prices">
+    <h2><h2><span class="blue-text">Вартість веб-розробки</span></h2></h2>
+    <p>Ціна веб-сайту залежить від багатьох факторів. Для детальної оцінки вартості рекомендуємо зв'язатися з менеджером та детально описати функціональність проекту, кількість сторінок та дизайн.</p>
+    <div class="cards">
+        <div class="card">Цільова сторінка від €200</div>
+        <div class="card">Корпоративний вебсайт від €400</div>
+        <div class="card">Інтернет-магазин від €800</div>
+        <div class="card">Веб-сайт-портфоліо від €200</div>
+        <div class="card">Веб-сайт каталогу від €500</div>
+        <div class="card">Розробка на замовлення від €700</div>
+    </div>
+</section>
+
+<!-- 🔥 РОБОТИ -->
+
+<section class="works" id="works">
+    <div class="container">
+        <h2><h2><span class="blue-text">Наші роботи</span> </h2> </h2>
+        <div class="cards">
+            <!-- Картка 1 -->
+            <a href=" https://mickrogreen-ux.github.io/Kyhar/" target="_blank" class="card">
+                <img src="work1.png" alt="Переглянути проект">
+                <div class="card-overlay">
+                    <span></span>
+                </div>
+            </a>
+
+            <!-- Картка 2 -->
+            <a href="" target="_blank" class="card">
+                <img src="progeckt3.png" alt="">
+                <div class="card-overlay">
+                    <span></span>
+                </div>
+            </a>
+
+            <!-- Картка 3 -->
+            <a href="" target="_blank" class="card">
+                <img src="progeckt4.png" alt="">
+                <div class="card-overlay">
+                    <span></span>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- 🔥 ОБ'ЄДНАНА СЕКЦІЯ (ПРО НАС + КОНТАКТИ) -->
+<section class="combined-section">
+    <div class="container">
+        
+        <!-- Блок ПРО НАС -->
+        <div class="about-content">
+            <h2><span class="blue-text">Про нас</span></h2>
+            <p>Ми — команда розробників, яка створює сучасні цифрові рішення для бізнесу.</p>
+            <p>Спеціалізуємося на розробці функціональних інтернет-магазинів, зручних CRM-систем та персональних сайтів «під ключ».</p>
+            <p>Наш підхід — це поєднання чистого коду, продуманого дизайну та надійної технічної підтримки. Допомагаємо вашому бренду стати помітним у мережі.</p>
+        </div>
+
+        <hr class="section-divider"> <!-- Легка лінія-розділювач (опціонально) -->
+
+        <!-- Блок КОНТАКТИ -->
+        <div class="contact-content" id="contact">
+            <h2><span class="blue-text">Контакти</span></h2>
+
+            <div class="contact-links">
+                <a href="tel:+380965116774" class="blue-text link-with-icon">
+                    <img src="gemini-svg.svg" alt="Телефон" class="blue-icon">
+                    +380 (96) 511-67-74
+                </a>
+                <span class="divider">|</span>
+                <a href="https://wa.me/380965116774" target="_blank" class="blue-text link-with-icon">
+                    <img src="gemini-svg (1).svg" alt="WhatsApp" class="blue-icon">
+                    WhatsApp
+                </a>
+            </div>
+
+            <form action="https://formspree.io/f/mbdwjveq" method="POST" id="form">
+                <input type="text" name="name" placeholder="Ваше ім'я" required>
+                <input type="email" name="email" placeholder="Ваш email" required>
+                <textarea name="message" placeholder="Ваше повідомлення" required></textarea>
+                <button type="submit">Відправити</button>
+            </form>
+        </div>
+
+    </div>
+</section>
+</body>
+</html>
