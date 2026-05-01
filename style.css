@@ -331,3 +331,27 @@ input, textarea {
 
     .divider { display: none; }
 }
+/* ПОВНЕ ЦЕНТРУВАННЯ ЗАГОЛОВКІВ В ОБ'ЄДНАНІЙ СЕКЦІЇ */
+.combined-section h2 {
+    width: 100%;            /* Заголовок займає всю ширину */
+    text-align: center;     /* Текст стає по центру */
+    display: flex;          /* Допомагає, якщо всередині є span */
+    justify-content: center; /* Центрує вміст всередині флекс-контейнера */
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Додатково центруємо контейнери, щоб вони не притискалися вліво */
+.about-content, .contact-content {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Якщо заголовки загорнуті в span.blue-text */
+.combined-section h2 .blue-text {
+    text-align: center;
+    width: 100%;
+}
