@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <!-- Google tag (gtag.js) -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Studio ArtemSof</title>
+    <link rel="stylesheet" href="style.css">
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-409025869"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -10,11 +14,21 @@
 
       gtag('config', 'AW-409025869');
     </script>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Studio ArtemSof</title>
-    <link rel="stylesheet" href="style.css">
+
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-409025869/g8CYCIzZ3qYcEM36hMMB',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
 </head>
 <body>
 
@@ -110,15 +124,20 @@
             <h2><span class="blue-text">Контакти</span></h2>
 
             <div class="contact-links">
-                <a href="tel:+380965116774" class="blue-text link-with-icon">
-                    <img src="gemini-svg.svg" alt="Телефон" class="blue-icon">
-                    +380 (96) 511-67-74
-                </a>
+                            <a href="tel:+380965116774" 
+   class="blue-text link-with-icon" 
+   onclick="return gtag_report_conversion('tel:+380965116774');">
+    <img src="gemini-svg.svg" alt="Телефон" class="blue-icon">
+    +380 (96) 511-67-74
+</a>
                 <span class="divider">|</span>
-                <a href="https://wa.me/380965116774" target="_blank" class="blue-text link-with-icon">
-                    <img src="gemini-svg (1).svg" alt="WhatsApp" class="blue-icon">
-                    WhatsApp
-                </a>
+                             <a href="https://wa.me/380965116774" 
+   target="_blank" 
+   class="blue-text link-with-icon" 
+   onclick="return gtag_report_conversion('https://wa.me/380965116774');">
+    <img src="gemini-svg (1).svg" alt="WhatsApp" class="blue-icon">
+    WhatsApp
+</a>
             </div>
 
             <form action="https://formspree.io/f/mbdwjveq" method="POST" id="form">
